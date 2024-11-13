@@ -1,0 +1,14 @@
+services:
+  db:
+    container_name: db
+    build: .
+    restart: always
+    tty: true
+    volumes:
+      - db-store:/var/lib/postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pgpassword
+
+volumes:
+  db-store:
